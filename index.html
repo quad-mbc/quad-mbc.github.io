@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3K8MG798YJ"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-3K8MG798YJ');
+  </script>
+  <meta charset="utf-8">
+  <meta name="description" content="Quadruped robot traversing 3D complex environments">
+  <meta name="keywords" content="Locomotion, Collision Domain, Reinforcement Learning">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quadruped robot traversing 3D complex environments</title>
+  <link rel="shortcut icon" type="image/x-icon" href="./resources/TSR.png">
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Quadruped robot traversing 3D complex environments</h1>
+          <div class="is-size-4 publication-authors">
+            <span class="author-block">
+              <a href="https://chengeeee.github.io/">Yi Cheng</a><sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://66lau.github.io">Hang Liu</a><sup>*</sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://guopingpan.github.io/">Guoping Pan</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://linqi-ye.github.io/">Linqi Ye</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://www.sigs.tsinghua.edu.cn/lhd/main.htm">Houde Liu</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <a href="https://www.au.tsinghua.edu.cn/info/1081/3165.htm">Bin Liang</a><sup></sup>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+              <br>
+              <br>
+              <!-- <img src="./resources/logo/thu.png" width="30%" style="margin-right: 40px;"></img> -->
+              <img src="./resources/logo.png" width="60%" style="margin-right: 40px;"></img>
+              <br>
+              <!-- <sup></sup>Tsinghua University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <sup></sup>Shanghai University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+
+              <!-- <sup>2</sup>Xi'an University of Technology&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
+              <!-- <span class="brmod"><b>IROS 2023</b></span> -->
+            </span>
+          </div>
+          
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="./paper.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <!-- Appendix Link. -->
+              <span class="link-block">
+                <a href="./appendix.pdf"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Appendix</span>
+                </a>
+              </span>              
+              <!-- arXiv Link. -->
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2404.18225"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="./resources/main.mp4"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- twitter Link. -->
+              <!-- <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-twitter"></i>
+                  </span>
+                  <span>Summary</span>
+                </a>
+              </span> -->
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <div class="columns is-centered">
+      <div class="column is-9">
+        <div class="is-centered">
+          <img src="./resources/teaser/crawl_bike.gif" style="width: 28%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+          <img src="./resources/teaser/climb_two.gif" style="width: 28%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+          <video autoplay muted loop playsinline style="width: 28%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+            <source src="./resources/teaser/bush.mp4" type="video/mp4">
+          </video>
+
+
+          <h2 class="subtitle has-text-centered">
+            <strong>A novel quadruped robot controller for agile collision response in complex 3D environments.</strong>
+          </h2>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+
+  <div class="container">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds">
+        <h2 class="title is-2">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Traversing 3-D complex environments has always been a significant challenge for legged locomotion.  Existing methods typically rely on external sensors such as vision and lidar to preemptively react to obstacles by acquiring environmental information.  However, in scenarios like nighttime or dense forests, external sensors often fail to function properly, necessitating robots to rely on proprioceptive sensors to perceive diverse obstacles in the environment and respond promptly.  This task is undeniably challenging.  Our research finds that methods based on collision detection can enhance a robot's perception of environmental obstacles.  In this work, we propose an end-to-end learning-based quadruped robot motion controller that relies solely on proprioceptive sensing.  This controller can accurately detect, localize, and agilely respond to collisions in unknown and complex 3D environments, thereby improving the robot's traversability in complex environments.  We demonstrate in both simulation and real-world experiments that our method enables quadruped robots to successfully traverse challenging obstacles in various complex environments.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <br/>
+  <br/>
+  <br/>
+
+  <!-- Paper video. -->
+  <!-- <div class="container"> -->
+    <div id="method_video" class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds is-centered">
+        <h2 class="title is-2">Project Video</h2>
+        <div class="is-centered">
+          <video controls muted playsinline" style="max-width: 80%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;">
+            <source src="./resources/main.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+
+  <!-- Module framework -->
+  <!-- <div class="container"> -->
+    <div id="method_video" class="columns is-centered has-text-centered">
+      <div class="column is-two-thirds is-centered">
+        <h2 class="title is-2">Framework</h2>
+        <div class="is-centered">
+          <!-- <div style="max-width: 80%; border: 1px solid #bbb; border-radius: 10px; margin: 2.0%;"> -->
+            <img src="./resources/teaser/frame.jpg" alt="Your Image" style="width: 100%; height: auto;">
+        </div>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+
+
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-2" style="text-align: center;">Highland</h2>
+          <p>
+            <center>
+            </center>
+          </p>
+          <tr>
+            <td>
+              <br>
+                <div class="columns is-centered has-text-centered v-divider">
+                  <img src="./resources/teaser/climb_rock.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;">
+                  &nbsp;
+                  <img src="./resources/teaser/climb_box.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;">
+                </div>
+                <br />              
+                <div class="columns is-centered has-text-centered v-divider">
+                  <img src="./resources/teaser/climb_big_rock.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;">
+                   &nbsp;
+                  <video autoplay loop muted playsinline src="./resources/teaser/climb3.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;"></video>
+                </div>
+            </td>
+          </tr>
+        </div> 
+    </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-2" style="text-align: center;">Tunnel</h2>
+          <p>
+            <center>
+            </center>
+          </p>
+          <tr>
+            <td>
+              <br>
+                <div class="columns is-centered has-text-centered v-divider">
+                  <img src="./resources/teaser/crawl_bike.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;">
+                  &nbsp;
+                  <img src="./resources/teaser/crawl_chair.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;">
+            </td>
+          </tr>
+        </div> 
+    </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-2" style="text-align: center;">Crack</h2>
+          <p>
+            <center>
+            </center>
+          </p>
+          <tr>
+            <td>
+              <br>
+                <div class="columns is-centered has-text-centered v-divider">
+                  <img src="./resources/teaser/tilt_indoor2.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;">
+                  &nbsp;
+                  <img src="./resources/teaser/tilt_outdoor.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;">
+            </td>
+          </tr>
+        </div> 
+    </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-2" style="text-align: center;">Bush</h2>
+          <p>
+            <center>
+            </center>
+          </p>
+          <tr>
+            <td>
+              <br>
+                <div class="columns is-centered has-text-centered v-divider">
+                  <video autoplay loop muted playsinline src="./resources/teaser/bush.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;"></video>
+                  &nbsp;
+                  <video autoplay loop muted playsinline src="./resources/teaser/bush2.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;"></video>
+            </td>
+          </tr>
+        </div> 
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-2" style="text-align: center;">Night Experiments</h2>
+          <p>
+            <center>
+            </center>
+          </p>
+          <tr>
+            <td>
+              <br>
+                <div class="columns is-centered has-text-centered v-divider">
+                  <video autoplay loop muted playsinline src="./resources/teaser/night_bush.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;"></video>
+                  &nbsp;
+                  <img src="./resources/teaser/night_crawl.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;">
+            </td>
+          </tr>
+        </div> 
+    </div>
+</section>
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-2" style="text-align: center;">Failure Cases</h2>
+          <p>
+            <center>
+            </center>
+          </p>
+          <tr>
+            <td>
+              <br>
+                <div class="columns is-centered has-text-centered v-divider">
+                  <video autoplay loop muted playsinline src="./resources/teaser/Fail_1.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;"></video>
+                  &nbsp;
+                  <video autoplay loop muted playsinline src="./resources/teaser/Fail_2.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;"></video>
+                </div>
+                <br />              
+            </td>
+          </tr>
+        </div> 
+    </div>
+</section>
+
+
+<section class="section">
+  <div class="container">
+    <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-2" style="text-align: center;">Locomotion Performance on ICRA2024 QRC</h2>
+          <p>
+            <center>
+            </center>
+          </p>
+          <tr>
+            <td>
+              <br>
+                <div class="columns is-centered has-text-centered v-divider">
+                  <video autoplay loop muted playsinline src="./resources/teaser/qrc1.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;"></video>
+                  &nbsp;
+                  <video autoplay loop muted playsinline src="./resources/teaser/qrc2.mp4" poster="./resources/loading-icon.gif" style="border: 1px solid #bbb; border-radius: 10px; width: 50%;"></video>
+                </div>
+                <br />              
+            </td>
+          </tr>
+        </div> 
+    </div>
+</section>
+
+
+
+
+<section class="section" id="BibTeX">
+  <div class="container content">
+    <h2 class="titile">BibTeX</h2>
+    <pre><code>
+@inproceedings{go2traverse,
+title={Quadruped robot traversing 3D complex environments},
+author={Yi Cheng, Hang Liu, Guoping Pan, Linqi Ye, Houde Liu, Bin Liang},
+booktitle={arXiv preprint arXiv:2404.18225},
+year={2024},
+}
+</code></pre>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container content">
+    <h2 class="title">Acknowledgment</h2>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="" target="_blank">
+        <img src="./resources/teaser/jianghuai.png" style="width: 100%;">
+      </a>
+      <a href="https://dev101.swanlab.cn/" target="_blank" style="margin-left: 200px;" >
+        <img src="./resources/teaser/swanlab.png" style="width: 40%;">
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+
+</body>
+</html>
