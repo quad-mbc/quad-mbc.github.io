@@ -57,11 +57,7 @@
               <!-- <img src="./resources/logo/thu.png" width="30%" style="margin-right: 40px;"></img> -->
               <img src="./resources/logo.png" width="60%" style="margin-right: 40px;"></img>
               <br>
-              <!-- <sup></sup>Tsinghua University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              <sup></sup>Shanghai University&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
 
-              <!-- <sup>2</sup>Xi'an University of Technology&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; -->
-              <!-- <span class="brmod"><b>IROS 2023</b></span> -->
             </span>
           </div>
           
@@ -167,8 +163,7 @@
         <h2 class="title is-2">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Traversing 3-D complex environments has always been a significant challenge for legged locomotion.  Existing methods typically rely on external sensors such as vision and lidar to preemptively react to obstacles by acquiring environmental information.  However, in scenarios like nighttime or dense forests, external sensors often fail to function properly, necessitating robots to rely on proprioceptive sensors to perceive diverse obstacles in the environment and respond promptly.  This task is undeniably challenging.  Our research finds that methods based on collision detection can enhance a robot's perception of environmental obstacles.  In this work, we propose an end-to-end learning-based quadruped robot motion controller that relies solely on proprioceptive sensing.  This controller can accurately detect, localize, and agilely respond to collisions in unknown and complex 3D environments, thereby improving the robot's traversability in complex environments.  We demonstrate in both simulation and real-world experiments that our method enables quadruped robots to successfully traverse challenging obstacles in various complex environments.
-          </p>
+            In the field of locomotion task of quadruped robots, Blind Policy and Perceptive Policy each have their own advantages and limitations. The Blind Policy relies on preset sensor information and algorithms, suitable for known and structured environments, but it lacks adaptability in complex or unknown environments. The Perceptive Policy uses visual sensors to obtain detailed environmental information, allowing it to adapt to complex terrains, but its effectiveness is limited under occluded conditions, especially when perception fails. Unlike the Blind Policy, the Perceptive Policy is not as robust under these conditions. To address these challenges, we propose a Multi-Brain collaborative system that incorporates the concepts of Multi-Agent Reinforcement Learning and introduces collaboration between the Blind Policy and the Perceptive Policy. By applying this multi-policy collaborative model to a quadruped robot, the robot can maintain stable locomotion even when the perceptual system is impaired or observational data is incomplete. Our simulations and real-world experiments demonstrate that this system significantly improves the robot's passability and robustness against perception failures in complex environments, validating the effectiveness of multi-policy collaboration in enhancing robotic motion performance.          </p>
         </div>
       </div>
     </div>
